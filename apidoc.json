@@ -1,0 +1,8 @@
+{
+  "name": "test-actions-test",
+  "version": "1.0.0",
+  "description": "This app is used to store data in database",
+  "apidoc": {
+    "title": "test-actions-test"
+  }
+}

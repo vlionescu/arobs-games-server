@@ -1,0 +1,22 @@
+{
+    "javascript.validate.enable": false,
+    // Set the default
+    "editor.formatOnSave": false,
+    // Enable per-language
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+      "editor.formatOnSave": true
+    },
+    "[markdown]": {
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.formatOnSave": true
+    },
+    "[yaml]": {
+      "editor.formatOnSave": true
+    }
+  }
+  
