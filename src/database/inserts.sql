@@ -1,13 +1,13 @@
 begin transaction;
 INSERT INTO games(name, imageUrl) 
 VALUES 
-('snake','../../public/images/snake.png'),
-('picturematch','../../public/images/picturematch.png'),
-('tictactoe','../../public/images/tictactoe.png'),
-('hangman','../../public/images/hangman.png'),
-('battleship','../../public/images/battleship.png'),
-('mathquiz', '../../public/images/mathquiz.png'),
-('connectfour', '../../public/images/connectfour.png');
+('snake','images/snake.png'),
+('picturematch','images/picturematch.png'),
+('tictactoe','images/tictactoe.png'),
+('hangman','images/hangman.png'),
+('battleship','images/battleship.png'),
+('mathquiz', 'images/mathquiz.png'),
+('connectfour', 'images/connectfour.png');
 
 INSERT INTO users(name, email, password) VALUES('chris', 'freq@gmail.com', 'password');
 INSERT INTO users(name, email, password) VALUES('chris1', 'fre2q@gmail.com', 'password');
