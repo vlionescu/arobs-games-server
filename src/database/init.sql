@@ -9,7 +9,8 @@ CREATE TABLE users (
 CREATE TABLE games (
   id integer primary key autoincrement,
   name varchar(30) not null,
-  imageUrl varchar(100) not null
+  imageUrl varchar(100) not null,
+  description varchar(256)
 );
 
 CREATE TABLE scores (
