@@ -1,10 +1,6 @@
-// TODO users:
-//   - Get all users
-//   - Get users By id ( games, score )
-//   - Add users ( register/ sign up )
-
 const db = require('../database');
 
+// GET All users
 exports.get = async (_, res) => {
   try {
     const users = await db.all('SELECT name, email FROM users');
@@ -14,6 +10,7 @@ exports.get = async (_, res) => {
   }
 };
 
+// GET User by ID
 exports.getById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -30,6 +27,7 @@ exports.getById = async (req, res) => {
   }
 };
 
+// POST Add user
 exports.post = async (req, res) => {
   try {
     const { name, email, password } = req.body;

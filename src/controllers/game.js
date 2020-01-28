@@ -1,10 +1,6 @@
-// TODO - games:
-//     - Add games
-//     - Get all games
-//     - Get games by id ( top 10 scores order desc )
-
 const db = require('../database');
 
+// GET All games (name, icons)
 exports.get = async (_, res) => {
   try {
     const games = await db.all('SELECT name,id,imageUrl,description FROM games');
@@ -14,6 +10,7 @@ exports.get = async (_, res) => {
   }
 };
 
+// GET Game by ID
 exports.getById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -28,17 +25,22 @@ exports.getById = async (req, res) => {
   }
 };
 
+// POST Add game
 exports.post = async (req, res) => {
   try {
-    const { name, imageUrl } = req.body;
+    const { name, imageUrl, description } = req.body;
 
-    if (!name || !imageUrl) return res.status(400).send('Bad request/AddGame');
+    if (!name || !imageUrl || !description) return res.status(400).send('Bad request/AddGame');
 
-    const id = await db.run(`INSERT INTO games(name, imageUrl) VALUES ($name, $imageUrl)`, {
-      $name: name,
-      $imageUrl: imageUrl,
-    });
-    return res.status(200).json({ id, name });
+    const id = await db.run(
+      `INSERT INTO games(name, imageUrl, description) VALUES ($name, $imageUrl, $description)`,
+      {
+        $name: name,
+        $imageUrl: imageUrl,
+        $description: description,
+      },
+    );
+    return res.status(200).json({ id, name, imageUrl, description });
   } catch (e) {
     return res.status(500).send('Something went wrong/addGame');
   }
