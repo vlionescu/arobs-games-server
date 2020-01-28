@@ -8,7 +8,6 @@
     "prestart": "yarn documentation",
     "start": "node src",
     "start:dev": "nodemon src",
-    "test": "jest --coverage false --verbose true",
     "lint": "eslint . --ext .js --ext .jsx",
     "format": "prettier --config .prettierrc --write **/*.{js,md}",
     "format:diff": "prettier --config .prettierrc --list-different **/*.{js,md}",
