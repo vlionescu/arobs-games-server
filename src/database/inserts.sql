@@ -7,7 +7,7 @@ VALUES
 ('hangman','images/hangman.png'),
 ('battleship','images/battleship.png'),
 ('mathquiz', 'images/mathquiz.png'),
-('connectfour', 'images/connectfour.png');
+('connectfour', '');
 
 INSERT INTO users(name, email, password) VALUES('chris', 'freq@gmail.com', 'password');
 INSERT INTO users(name, email, password) VALUES('chris1', 'fre2q@gmail.com', 'password');
