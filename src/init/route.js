@@ -9,6 +9,7 @@ module.exports = (app) => {
   app.get('/users/:id', userController.getById);
   app.get('/scores/:id', scoreController.getById);
 
+  app.get('/login', userController.login);
   app.post('/users', userController.post);
   app.post('/games', gameController.post);
   app.post('/scores', scoreController.post);

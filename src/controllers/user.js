@@ -47,3 +47,18 @@ exports.post = async (req, res) => {
     return res.status(500).send('Something went wrong/addUser');
   }
 };
+exports.login = async (req, res) => {
+  try {
+    const { name, password } = req.body;
+
+    if (!name || !password) return res.status(400).send('Bad request/login');
+
+    const user = await db.get(`select * from  users where name = $name`, {
+      $name: name,
+    });
+    if (user.password === password) return res.status(200).json(user);
+    return res.status(500).send('invalid name or password/login');
+  } catch (e) {
+    return res.status(500).send('Something went wrong/login');
+  }
+};
