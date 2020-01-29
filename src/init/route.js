@@ -2,7 +2,7 @@ const gameController = require('../controllers/game');
 const userController = require('../controllers/user');
 const scoreController = require('../controllers/score');
 const authController = require('../controllers/authController');
-const verifyToken = require('../controllers/verifyToken');
+// const verifyToken = require('../controllers/verifyToken');
 
 module.exports = (app) => {
   app.get('/games', gameController.get);
