@@ -28,7 +28,7 @@ exports.getById = async (req, res) => {
 };
 
 // POST Add user
-exports.post = async (req, res) => {
+exports.post = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
@@ -42,7 +42,7 @@ exports.post = async (req, res) => {
         $password: password,
       },
     );
-    return res.status(200).json({ id, name, email, password });
+    next();
   } catch (e) {
     return res.status(500).send('Something went wrong/addUser');
   }

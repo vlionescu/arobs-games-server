@@ -1,9 +1,9 @@
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const db = require('../database');
+const ms = require('ms');
 
 exports.login = async (req, res) => {
   try {
-    console.log(req.body);
     const user = await db.get('SELECT * FROM users where users.name = $username', {
       $username: req.body.name,
     });
@@ -14,7 +14,7 @@ exports.login = async (req, res) => {
     // create a token
     // HARDCODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     var token = jwt.sign({ id: user.id }, 'config.secret', {
-      expiresIn: 86400, // expires in 24 hours
+      expiresIn: ms('3 hrs'), // expires in 3 hours
     });
     // return the information including token as JSON
     res.status(200).send({ auth: true, token: token });

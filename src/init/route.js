@@ -15,7 +15,8 @@ module.exports = (app) => {
   // if you want to check, user is logged in then write like this:
   // app.get('/games/:id', verifyToken, gameController.getById);
 
-  app.post('/users', userController.post);
+  // if registration is successful, then redirect to authentication
+  app.post('/users', userController.post, authController.login);
   app.post('/games', gameController.post);
   app.post('/scores', scoreController.post);
   app.post('/login', authController.login);
