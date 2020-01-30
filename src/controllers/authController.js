@@ -1,6 +1,6 @@
-var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
-const db = require('../database');
+const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const ms = require('ms');
+const db = require('../database');
 
 exports.login = async (req, res) => {
   try {
@@ -12,15 +12,17 @@ exports.login = async (req, res) => {
       return res.status(401).send('Wrong password or username');
     // if user is found and password is valid
     // create a token
-    // HARDCODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    var token = jwt.sign({ id: user.id }, 'config.secret', {
+    // HARDCODE !!
+    const token = jwt.sign({ id: user.id }, 'config.secret', {
       expiresIn: ms('3 hrs'), // expires in 3 hours
     });
     // return the information including token as JSON
-    res.status(200).send({ auth: true, token: token });
+    res.status(200).send({ auth: true, token });
   } catch (e) {
     return res.status(500).send('Something went wrong/login');
   }
+  // return because of ESLint error.
+  return req;
 };
 
 exports.logout = async (req, res) => {
