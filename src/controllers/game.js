@@ -3,7 +3,7 @@ const db = require('../database');
 // GET All games (name, icons)
 exports.get = async (_, res) => {
   try {
-    const games = await db.all('SELECT name,id,imageUrl,description FROM games');
+    const games = await db.all('SELECT * FROM games');
     return res.status(200).json(games);
   } catch (e) {
     return res.status(500).send('Something went wrong/getAllGames');

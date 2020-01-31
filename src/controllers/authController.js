@@ -8,7 +8,7 @@ exports.login = async (req, res) => {
       $username: req.body.name,
     });
     if (!user) {
-      return res.status(404).json({ error: 'No user found.' });
+      return res.status(404).json({ error: 'Wrong password or username' });
     }
     if (user.password !== req.body.password || user.name !== req.body.name) {
       return res.status(401).json({ error: 'Wrong password or username' });
