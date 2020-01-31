@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
       expiresIn: ms('3 hrs'), // expires in 3 hours
     });
     // return the information including token as JSON
-    return res.status(200).send({ auth: true, token });
+    return res.status(200).send({ auth: true, token, username: user.name });
   } catch (e) {
     return res.status(500).json({ error: 'Something went wrong/login' });
   }
