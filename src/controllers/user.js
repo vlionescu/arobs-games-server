@@ -34,15 +34,21 @@ exports.post = async (req, res, next) => {
 
     if (!name || !email || !password) return res.status(400).send('Bad request/AddUser');
 
-    const id = await db.run(
-      `INSERT INTO users(name, email, password) VALUES ($name, $email, $password)`,
-      {
+    await db
+      .run(`INSERT INTO users(name, email, password) VALUES ($name, $email, $password)`, {
         $name: name,
         $email: email,
         $password: password,
-      },
-    );
-    next();
+      })
+      .then(() => {
+        next();
+      })
+      .catch(() => {
+        return res.status(404).json({ error: 'User is already exists!' });
+      });
+
+    // return because of ESLint error.
+    return req;
   } catch (e) {
     return res.status(500).send('Something went wrong/addUser');
   }

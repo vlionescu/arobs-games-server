@@ -4,6 +4,10 @@ const db = require('../database');
 
 exports.login = async (req, res) => {
   try {
+    if (!req.body.name || !req.body.password) {
+      return res.status(400).send('Bad request/Login');
+    }
+
     const user = await db.get('SELECT * FROM users where users.name = $username', {
       $username: req.body.name,
     });
@@ -20,14 +24,12 @@ exports.login = async (req, res) => {
       expiresIn: ms('3 hrs'), // expires in 3 hours
     });
     // return the information including token as JSON
-    return res.status(200).send({ auth: true, token, username: user.name });
+    return res.status(200).json({ auth: true, token, username: user.name });
   } catch (e) {
     return res.status(500).json({ error: 'Something went wrong/login' });
   }
-  // return because of ESLint error.
-  return req;
 };
 
-exports.logout = async (req, res) => {
-  res.status(200).send({ auth: false, token: null });
+exports.logout = (req, res) => {
+  res.status(200).json({ auth: false, token: null, username: '' });
 };
