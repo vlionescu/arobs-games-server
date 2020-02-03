@@ -16,10 +16,10 @@ const unit = 32;
 
 //images
 const floor = new Image();
-floor.src = "/img/floor.png";
+floor.src = "./img/floor.png";
 
 const foodImage = new Image();
-foodImage.src = "/img/arbs.png";
+foodImage.src = "./img/arbs.png";
 
 // audio
 const left = new Audio();
@@ -29,12 +29,12 @@ const down = new Audio();
 const dead = new Audio();
 const eat = new Audio();
 
-left.src = "/audio/left.mp3";
-up.src = "/audio/up.mp3";
-right.src = "/audio/right.mp3";
-down.src = "/audio/down.mp3";
-dead.src = "/audio/dead.mp3";
-eat.src = "/audio/eat.mp3";
+left.src = "./audio/left.mp3";
+up.src = "./audio/up.mp3";
+right.src = "./audio/right.mp3";
+down.src = "./audio/down.mp3";
+dead.src = "./audio/dead.mp3";
+eat.src = "./audio/eat.mp3";
 
 // creating the snake and setting position to center
 let snake = [];
