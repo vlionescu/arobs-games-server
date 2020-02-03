@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="boards.css" rel="stylesheet">
+    <link href="reset.css" rel="stylesheet">
+    <link href="media_queries.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+<div><h2 class="text" id="menu">Menu</h2></div>
+<h1 class="text" id="title">Battleship</h1>
+<div class="text" id="score"><h2>Score: </h2><h2 id="score_to_show"></h2> </div>
+</div>
+<div id="main">
+
+    <div class="gameSection text">
+        <ul class="message_board">
+           <li id="message"> Please place your ships!</li>
+        </ul>
+            <div  id="boards">
+                <table id="user_board" class="board">
+                    <tr>
+                        <th></th>
+                        <th class="1">1</th>
+                        <th class="2">2</th>
+                        <th class="3">3</th>
+                        <th class="4">4</th>
+                        <th class="5">5</th>
+                        <th class="6">6</th>
+                        <th class="7">7</th>
+                        <th class="8">8</th>
+                        <th class="9">9</th>
+                        <th class="10">10</th>
+                    </tr>
+                    <tr>
+                        <th>A</th>
+                        <td id="1Au"></td>
+                        <td id="2Au"></td>
+                        <td id="3Au"></td>
+                        <td id="4Au"></td>
+                        <td id="5Au"></td>
+                        <td id="6Au"></td>
+                        <td id="7Au"></td>
+                        <td id="8Au"></td>
+                        <td id="9Au"></td>
+                        <td id="10Au"></td>
+
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td id="1Bu"></td>
+                        <td id="2Bu"></td>
+                        <td id="3Bu"></td>
+                        <td id="4Bu"></td>
+                        <td id="5Bu"></td>
+                        <td id="6Bu"></td>
+                        <td id="7Bu"></td>
+                        <td id="8Bu"></td>
+                        <td id="9Bu"></td>
+                        <td id="10Bu"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>C</th>
+                        <td id="1Cu"></td>
+                        <td id="2Cu"></td>
+                        <td id="3Cu"></td>
+                        <td id="4Cu"></td>
+                        <td id="5Cu"></td>
+                        <td id="6Cu"></td>
+                        <td id="7Cu"></td>
+                        <td id="8Cu"></td>
+                        <td id="9Cu"></td>
+                        <td id="10Cu"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>D</th>
+                        <td id="1Du"></td>
+                        <td id="2Du"></td>
+                        <td id="3Du"></td>
+                        <td id="4Du"></td>
+                        <td id="5Du"></td>
+                        <td id="6Du"></td>
+                        <td id="7Du"></td>
+                        <td id="8Du"></td>
+                        <td id="9Du"></td>
+                        <td id="10Du"></td>
+
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <td id="1Eu"></td>
+                        <td id="2Eu"></td>
+                        <td id="3Eu"></td>
+                        <td id="4Eu"></td>
+                        <td id="5Eu"></td>
+                        <td id="6Eu"></td>
+                        <td id="7Eu"></td>
+                        <td id="8Eu"></td>
+                        <td id="9Eu"></td>
+                        <td id="10Eu"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <td id="1Fu"></td>
+                        <td id="2Fu"></td>
+                        <td id="3Fu"></td>
+                        <td id="4Fu"></td>
+                        <td id="5Fu"></td>
+                        <td id="6Fu"></td>
+                        <td id="7Fu"></td>
+                        <td id="8Fu"></td>
+                        <td id="9Fu"></td>
+                        <td id="10Fu"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>G</th>
+                        <td id="1Gu"></td>
+                        <td id="2Gu"></td>
+                        <td id="3Gu"></td>
+                        <td id="4Gu"></td>
+                        <td id="5Gu"></td>
+                        <td id="6Gu"></td>
+                        <td id="7Gu"></td>
+                        <td id="8Gu"></td>
+                        <td id="9Gu"></td>
+                        <td id="10Gu"></td>
+
+                    </tr>
+                    <tr>
+                        <th>H</th>
+                        <td id="1Hu"></td>
+                        <td id="2Hu"></td>
+                        <td id="3Hu"></td>
+                        <td id="4Hu"></td>
+                        <td id="5Hu"></td>
+                        <td id="6Hu"></td>
+                        <td id="7Hu"></td>
+                        <td id="8Hu"></td>
+                        <td id="9Hu"></td>
+                        <td id="10Hu"></td>
+
+                    </tr>
+                    <tr>
+                        <th>I</th>
+                        <td id="1Iu"></td>
+                        <td id="2Iu"></td>
+                        <td id="3Iu"></td>
+                        <td id="4Iu"></td>
+                        <td id="5Iu"></td>
+                        <td id="6Iu"></td>
+                        <td id="7Iu"></td>
+                        <td id="8Iu"></td>
+                        <td id="9Iu"></td>
+                        <td id="10Iu"></td>
+
+                    </tr>
+                    <tr>
+                        <th>J</th>
+                        <td id="1Ju"></td>
+                        <td id="2Ju"></td>
+                        <td id="3Ju"></td>
+                        <td id="4Ju"></td>
+                        <td id="5Ju"></td>
+                        <td id="6Ju"></td>
+                        <td id="7Ju"></td>
+                        <td id="8Ju"></td>
+                        <td id="9Ju"></td>
+                        <td id="10Ju"></td>
+
+                    </tr>
+
+                </table>
+                <table id="computer_board" class="board">
+                    <tr><th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    </tr>
+                    <tr>
+                        <th>A</th>
+                        <td id="1A"></td>
+                        <td id="2A"></td>
+                        <td id="3A"></td>
+                        <td id="4A"></td>
+                        <td id="5A"></td>
+                        <td id="6A"></td>
+                        <td id="7A"></td>
+                        <td id="8A"></td>
+                        <td id="9A"></td>
+                        <td id="10A"></td>
+
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td id="1B"></td>
+                        <td id="2B"></td>
+                        <td id="3B"></td>
+                        <td id="4B"></td>
+                        <td id="5B"></td>
+                        <td id="6B"></td>
+                        <td id="7B"></td>
+                        <td id="8B"></td>
+                        <td id="9B"></td>
+                        <td id="10B"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>C</th>
+                        <td id="1C"></td>
+                        <td id="2C"></td>
+                        <td id="3C"></td>
+                        <td id="4C"></td>
+                        <td id="5C"></td>
+                        <td id="6C"></td>
+                        <td id="7C"></td>
+                        <td id="8C"></td>
+                        <td id="9C"></td>
+                        <td id="10C"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>D</th>
+                        <td id="1D"></td>
+                        <td id="2D"></td>
+                        <td id="3D"></td>
+                        <td id="4D"></td>
+                        <td id="5D"></td>
+                        <td id="6D"></td>
+                        <td id="7D"></td>
+                        <td id="8D"></td>
+                        <td id="9D"></td>
+                        <td id="10D"></td>
+
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <td id="1E"></td>
+                        <td id="2E"></td>
+                        <td id="3E"></td>
+                        <td id="4E"></td>
+                        <td id="5E"></td>
+                        <td id="6E"></td>
+                        <td id="7E"></td>
+                        <td id="8E"></td>
+                        <td id="9E"></td>
+                        <td id="10E"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <td id="1F"></td>
+                        <td id="2F"></td>
+                        <td id="3F"></td>
+                        <td id="4F"></td>
+                        <td id="5F"></td>
+                        <td id="6F"></td>
+                        <td id="7F"></td>
+                        <td id="8F"></td>
+                        <td id="9F"></td>
+                        <td id="10F"></td>
+
+
+                    </tr>
+                    <tr>
+                        <th>G</th>
+                        <td id="1G"></td>
+                        <td id="2G"></td>
+                        <td id="3G"></td>
+                        <td id="4G"></td>
+                        <td id="5G"></td>
+                        <td id="6G"></td>
+                        <td id="7G"></td>
+                        <td id="8G"></td>
+                        <td id="9G"></td>
+                        <td id="10G"></td>
+
+                    </tr>
+                    <tr>
+                        <th>H</th>
+                        <td id="1H"></td>
+                        <td id="2H"></td>
+                        <td id="3H"></td>
+                        <td id="4H"></td>
+                        <td id="5H"></td>
+                        <td id="6H"></td>
+                        <td id="7H"></td>
+                        <td id="8H"></td>
+                        <td id="9H"></td>
+                        <td id="10H"></td>
+
+                    </tr>
+                    <tr>
+                        <th>I</th>
+                        <td id="1I"></td>
+                        <td id="2I"></td>
+                        <td id="3I"></td>
+                        <td id="4I"></td>
+                        <td id="5I"></td>
+                        <td id="6I"></td>
+                        <td id="7I"></td>
+                        <td id="8I"></td>
+                        <td id="9I"></td>
+                        <td id="10I"></td>
+
+                    </tr>
+                    <tr>
+                        <th>J</th>
+                        <td id="1J"></td>
+                        <td id="2J"></td>
+                        <td id="3J"></td>
+                        <td id="4J"></td>
+                        <td id="5J"></td>
+                        <td id="6J"></td>
+                        <td id="7J"></td>
+                        <td id="8J"></td>
+                        <td id="9J"></td>
+                        <td id="10J"></td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <div  id="ships">
+                <ul class="ships">
+                    <li class="ship" id="carrier">Carrier 5</li>
+                    <li class="ship" id="battle">Battleship 4</li>
+                    <li class="ship" id="cruiser">Cruiser 3</li>
+                    <li class="ship" id="destroyer">Destroyer 2</li>
+                    <li class="ship" id="submarine">Submarine 3</li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="menu_part text" id="menu_popup">
+        <ul class="menu_options">
+            <li class="option" id="resume">Resume</li>
+            <li class="option" id="restart">New Game</li>
+
+        </ul>
+    </div>
+</div>
+<script src="boards.js"></script>
+</body>
+</html>

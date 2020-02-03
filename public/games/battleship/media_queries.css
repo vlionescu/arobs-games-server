@@ -1,0 +1,17 @@
+@media screen and  (max-width: 850px) {
+
+    #boards{
+       margin-left: 2%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-evenly;
+    }
+
+    td,th{
+        padding: 15px;
+
+    }
+    .ships{
+        flex-direction: column;
+    }
+}

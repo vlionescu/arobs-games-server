@@ -1,0 +1,102 @@
+html {
+  background-image: linear-gradient(45deg, green, blue);
+  background-repeat: no-repeat;
+  height: 100%;
+  overflow: hidden;
+}
+
+.canvas {
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  position: absolute;
+  top: 530px;
+  left: 0;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(12, 238, 23, 0.6);
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  animation: fadeIn 2s;
+}
+
+.easy {
+  top: 100px;
+  left: 0;
+  background-color: rgb(0, 128, 122, 0.7);
+}
+
+.medium {
+  top: 190px;
+  left: 0;
+  background-color: rgb(95, 0, 248, 0.7);
+}
+
+.hard {
+  top: 280px;
+  left: 0;
+  background-color: rgb(255, 0, 0, 0.7);
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.unhide {
+  /* right: 0; */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .button {
+    opacity: 0.1;
+  }
+  .button:hover {
+    opacity: 0.8;
+  }
+}
