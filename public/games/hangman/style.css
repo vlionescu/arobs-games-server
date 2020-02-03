@@ -1,0 +1,136 @@
+
+#hangmanPic{
+    margin-top: -110px;
+    width: 200px;
+    margin-left: 60px;
+}
+
+.game-arrangement{
+    display: flex;
+    margin: 5vh;
+    flex-direction: column;
+}
+
+#chosenWord{
+    font-size: 30px;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: -55px;
+}
+
+#statusMessage{
+    font-size: 40px;
+    color: white;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: -60%;
+}
+.points{
+    display: inline;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px}
+#lives{
+    font-size: 30px;
+    color: white;
+
+
+}
+#score{
+    color: white;
+    font-size: 30px;
+
+}
+#container{
+    width: 706px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+
+}
+.game{
+    display: inline;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+.buttons{
+    font-size: 30px;
+    width: 100%;
+    margin: 15px;
+    padding-top: 50%;
+
+}
+#alphabet{
+    display: inline;
+    text-align: center;
+    width: 45%;
+
+}
+.text-center{
+    text-align: center;
+    box-sizing: border-box;
+
+
+}
+
+.reset{
+    font-family: 'Satisfy', cursive;
+}
+
+.all {
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Satisfy', cursive;
+    background-image: url('./images/gg.jpg');
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#hideImgWin{
+    display:none;
+    margin: 0 auto;
+    padding-top: 15vh;
+
+}
+#hideImgLost{
+    display:none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    left: 438px
+}
+
+body{
+    margin: 0;
+}
+
+button {
+    margin: 8px;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    padding: 0.5em 1em;
+    color: black;
+    box-shadow: 0 0 0 2px #000 inset;
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+button:hover {
+    box-shadow: 0 0 0 2px #000 inset;
+    color: #000;
+    background-color: transparent;
+}
+
+#img1{
+    margin-left: 5vh;
+}

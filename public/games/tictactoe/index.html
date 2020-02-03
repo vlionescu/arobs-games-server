@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="html" href="main.html">
+    <link href='https://fonts.googleapis.com/css?family=Arimo|Montserrat' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id='selection'>
+        What level do you want?
+        <br>
+        <button id="choise3" class='hover'>Easy</button>
+        <button id="choise4" class='hover'>Hard</button>
+    </div>
+<div id='selection'>
+    Play as:
+    <button id="choise1" class='hover'>X</button>
+    <button id="choise2" class='hover'>O</button>
+</div>
+    <table id="scoreboard" align="center">
+        <tr>
+            <td class="cellscore"> Human </td>
+            <td class="cellscore" width="10"> &nbsp; </td>
+            <td class="cellscore"> Computer </td>
+        </tr>
+        <tr>
+            <td  class="score cellscore" id="player1">
+                0
+            </td>
+            <td class="cellscore"> &nbsp; </td>
+            <td class="score cellscore" id="player2">
+                0
+            </td>
+        </tr>
+    </table>
+
+    <table id="initial" align="center">
+        <tr>
+            <td class="cell" id="0"></td>
+            <td class="cell" id="1"></td>
+            <td class="cell" id="2"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="3"></td>
+            <td class="cell" id="4"></td>
+            <td class="cell" id="5"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="6"></td>
+            <td class="cell" id="7"></td>
+            <td class="cell" id="8"></td>
+        </tr>
+    </table>
+    <div class="endgame">
+        <div class="text"></div>
+    </div>
+    <button class="hoverReplay" onclick="startGame()">REPLAY</button>
+    <button id="cls" class="hoverReplay" onclick="reset()">RESTART</button>
+<!--    <script src="JS.js"></script>-->
+    <script src="JS2.js"></script>
+</body>
+</html>

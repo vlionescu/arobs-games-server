@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>MyHangman</title>
+</head>
+<body>
+<div class="all">
+    <div class="points">
+        <div id="score">Score: </div>
+        <div style="padding-top: 2%" id="lives">Lives:       <img style="width: 1.5%" id="heart"  src="./images/hearts.png" alt></div>
+    </div>
+    <div class="name"><h1 id="statusMessage">Hangman Game </h1></div>
+
+   <div class="game-arrangement">
+       <div id="game">
+           <div class="text-center">
+               <img id="hangmanPic" src="./images/6.jpg" alt>
+           </div>
+           <div id="chosenWord"></div>
+       </div>
+       <div id="container">
+           <div id="buttons"></div>
+       </div>
+   </div>
+    <div id="hideImgWin">
+        <img id="img1"   src="./images/yes.png" alt>
+        <div style="text-align: center; font-size:35px;color: white">+1p Yay!</div>
+        <div style="text-align: center; font-size:35px;color: white"> Play again to collect more points</div>
+    </div>
+    <div id="hideImgLost">
+        <img id="img2"   src="./images/no.jpg" alt>
+    </div>
+    <div id="lost"></div>
+    <div> <button id="reset">Play again</button></div>
+    <script src='./game.js'></script>
+</div>
+</body>
+ </html>
+
