@@ -44,7 +44,7 @@ exports.post = async (req, res, next) => {
         next();
       })
       .catch(() => {
-        return res.status(404).json({ error: 'User is already exists!' });
+        return res.status(404).json({ error: 'User already exists!' });
       });
 
     // return because of ESLint error.
