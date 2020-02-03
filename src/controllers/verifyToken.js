@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     // check header or url parameters or post parameters for token
     const token = req.headers['x-access-token'];
     if (!token) {
-      return res.status(403).json({ auth: false, message: 'No token provided.' });
+      return res.status(403).json({ auth: false, error: 'No token provided.' });
     }
 
     // verifies secret and checks exp
@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
     // eslint-disable-next-line consistent-return
     jwt.verify(token, 'config.secret', async (err, decoded) => {
       if (err) {
-        return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+        return res.status(500).json({ auth: false, error: 'Failed to authenticate token.' });
       }
 
       // if everything is good, save to request for use in other routes
