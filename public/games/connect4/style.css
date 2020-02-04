@@ -1,0 +1,141 @@
+body{
+    background: rgba(30, 34, 40, 0.94);
+    align-content: center;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:5px;
+    color: gainsboro;
+}
+
+p.info{
+    text-align:center;
+    width:400px;
+    margin:0 auto;
+    font-size:12px;
+    font-weight:bold;
+    color:#666;
+    margin-bottom:20px;
+}
+
+#button{
+    text-align: center;
+}
+
+#game-base{
+    width:640px;
+    margin:0 auto;
+    padding-top:60px;
+}
+
+#game-table{
+    width:550px;
+    height:550px;
+    margin:0 auto;
+    position:relative;
+    border-bottom: 1px solid slategrey;
+    border-left: 1px solid slategrey;
+    border-right: 1px solid slategrey;
+}
+
+.disc{
+    position:absolute;
+    z-index:-1;
+    top:-55px;
+    left:14px;
+    width:46px;
+    height:46px;
+    border-radius:46px;
+    transition:all .3s;
+}
+
+.disc.red{
+    background:#d96666;
+}
+
+.disc.yellow{
+    background:#ffeb79;
+}
+
+#scor{
+    text-align: center;
+    color: red;
+    margin-bottom:5px;
+}
+#sccomputer{
+    color:black;
+    display: inline-block;
+    background-color: #607ccc;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height: 20px;
+}
+
+#scplayer{
+    display: inline-block;
+    background-color: #8773cc;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height: 20px;
+}
+
+button:hover {
+    background-color: green;
+}
+
+button {
+    display: inline-block;
+    background-color: #54b6cc;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 3px;
+    width: 128px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height: 66px;
+}
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+button:hover {
+    background-color: #8a80f9;
+}
+button:hover span {
+    padding-right: 25px;
+}
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
