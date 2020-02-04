@@ -2,7 +2,7 @@ alert('Get Ready and press ok, you start with 10 second!');
 
 var level = 1;
 var score = 0;
-var vIntervalFunc,vAnswerFunc;
+var vIntervalFunc, vAnswerFunc;
 
 const exercices = [
   {
@@ -26,7 +26,7 @@ const exercices = [
     answer: '10',
   },
 
-    //2
+  //2
   {
     exercice: '2( X + 14 ) = 30',
     answer: '1',
@@ -47,7 +47,7 @@ const exercices = [
     exercice: '49 - 7 * X = 14',
     answer: '5',
   },
-    //3
+  //3
   {
     exercice: '3 + 3 x 3 - 3 + 3 = X',
     answer: '12',
@@ -68,7 +68,7 @@ const exercices = [
     exercice: '9 - 3 : 1/3 + 1 = X',
     answer: '1',
   },
-    //4
+  //4
   {
     exercice: '6 : 2( 1 + 2) = ?',
     answer: '9',
@@ -95,7 +95,6 @@ var iglobal = 0;
 var btnRestart = document.getElementById('btn-restart');
 
 function Start() {
-
   document.getElementById('current-level').innerHTML = level;
   document.getElementById('current-score').innerHTML = score;
   target = document.getElementById('ex');
@@ -143,10 +142,11 @@ function verifyAnswer(i) {
     level++;
     document.getElementById('current-level').innerHTML = level;
     document.getElementById('current-score').innerHTML = score;
-    alert('That\'s Correct, Press OK and continue.');
+    alert("That's Correct, Press OK and continue.");
     iglobal++;
     document.getElementById('input-answer').value = '';
     if (iglobal === exercices.length) {
+      parent.setScore(score);
       alert('In the end YOU ROCK! \n You make: ' + score + ' points');
       btnRestart.style.visibility = 'visible';
     }
@@ -154,7 +154,7 @@ function verifyAnswer(i) {
     showLevelMessage(level);
     Start();
   } else {
-
+    parent.setScore(score);
     alert('Wrong , your score is: ' + score + ' and you stop at level: ' + (level - 1));
     userAnswer = false;
     btnRestart.style.visibility = 'visible';
@@ -162,7 +162,6 @@ function verifyAnswer(i) {
 }
 
 function timeInterval(counter) {
-
   vIntervalFunc = setInterval(function() {
     counter--;
     if (counter > 0) {
@@ -176,15 +175,11 @@ function timeInterval(counter) {
 }
 
 function showLevelMessage(currentLevel) {
-  stages = [5,10,15];
-  let i=0;
-  stages.forEach( function(stage){
-    if(currentLevel - 1 === stage)
-      alert("you are at stage: "+ stages[i]  + ", time drop with "+ (i + 1)  +" second now on.");
-      i++;
-      }
-  );
+  stages = [5, 10, 15];
+  let i = 0;
+  stages.forEach(function(stage) {
+    if (currentLevel - 1 === stage)
+      alert('you are at stage: ' + stages[i] + ', time drop with ' + (i + 1) + ' second now on.');
+    i++;
+  });
 }
-
-
-

@@ -7,23 +7,23 @@ class Game {
   }
 
   clearAllCardsClasses() {
-    this.cards.forEach(card => {
-      card.cardObj.classList.remove("matched");
-      card.cardObj.classList.remove("unmatched");
-      card.cardObj.classList.add("cardHover");
+    this.cards.forEach((card) => {
+      card.cardObj.classList.remove('matched');
+      card.cardObj.classList.remove('unmatched');
+      card.cardObj.classList.add('cardHover');
     });
   }
 
   init = () => {
-    let cols = document.getElementsByClassName("card");
+    let cols = document.getElementsByClassName('card');
 
-    html.style.setProperty("--bgcolor1", level * 22.5);
+    html.style.setProperty('--bgcolor1', level * 22.5);
 
     if (!isRestartClicked) {
       if (level > 10) {
-        gameBoard.style.width = "100%";
+        gameBoard.style.width = '100%';
       } else {
-        gameBoard.style.width = "65%";
+        gameBoard.style.width = '65%';
       }
     }
 
@@ -33,8 +33,8 @@ class Game {
     this.clickCounter = 0;
     this.timerTime = 0;
     this.firstClick = false;
-    stopper.textContent = "00:00:00";
-    stopperModal.textContent = "00:00:00";
+    stopper.textContent = '00:00:00';
+    stopperModal.textContent = '00:00:00';
   };
 
   start = () => {
@@ -45,8 +45,8 @@ class Game {
 
   restart = () => {
     this.init();
-    document.getElementsByTagName("ul")[0].remove();
-    this.cards.forEach(element => {
+    document.getElementsByTagName('ul')[0].remove();
+    this.cards.forEach((element) => {
       element.setVisible(false);
     });
     this.start();
@@ -56,7 +56,7 @@ class Game {
   };
 
   isFinished = () => {
-    return this.cards.every(card => card.isVisible());
+    return this.cards.every((card) => card.isVisible());
   };
 
   startStopper = () => {
@@ -65,26 +65,25 @@ class Game {
       let numOfHours = Math.floor(this.timerTime / 3600);
       let numOfMins = Math.floor((this.timerTime % 3600) / 60);
       let numOfSecs = Math.floor((this.timerTime % 3600) % 60);
-      if (numOfHours < 10) numOfHours = "0" + numOfHours;
-      if (numOfSecs < 10) numOfSecs = "0" + numOfSecs;
-      if (numOfMins < 10) numOfMins = "0" + numOfMins;
+      if (numOfHours < 10) numOfHours = '0' + numOfHours;
+      if (numOfSecs < 10) numOfSecs = '0' + numOfSecs;
+      if (numOfMins < 10) numOfMins = '0' + numOfMins;
       stopperModal.textContent = stopper.textContent =
-        numOfHours + ":" + numOfMins + ":" + numOfSecs;
+        numOfHours + ':' + numOfMins + ':' + numOfSecs;
     }, 1000);
   };
 
   addToGameBoard = () => {
-    let ul = document.createElement("ul");
-    this.cards.forEach(card => {
+    let ul = document.createElement('ul');
+    this.cards.forEach((card) => {
       ul.appendChild(card.cardObj);
     });
     gameBoard.appendChild(ul);
   };
 
-  setClickable = cards => {
-    cards.forEach(card => {
-      card.cardObj.onclick = () =>
-        this.onClickHandelForCards(card, this.timeoutCallback); // callback for settimeout
+  setClickable = (cards) => {
+    cards.forEach((card) => {
+      card.cardObj.onclick = () => this.onClickHandelForCards(card, this.timeoutCallback); // callback for settimeout
     });
   };
 
@@ -104,10 +103,10 @@ class Game {
    * @param {string} className       A CSS class name.
    */
   manageStyleClassToCards(command, classname) {
-    if (command === "remove") {
+    if (command === 'remove') {
       this.twoCard[0].cardObj.classList.remove(classname);
       this.twoCard[1].cardObj.classList.remove(classname);
-    } else if (command === "add") {
+    } else if (command === 'add') {
       this.twoCard[0].cardObj.classList.add(classname);
       this.twoCard[1].cardObj.classList.add(classname);
     } else {
@@ -119,8 +118,8 @@ class Game {
     this.setClickable(this.twoCard);
     this.twoCard[0].setVisible(false);
     this.twoCard[1].setVisible(false);
-    this.manageStyleClassToCards("remove", "unmatched");
-    this.manageStyleClassToCards("add", "cardHover");
+    this.manageStyleClassToCards('remove', 'unmatched');
+    this.manageStyleClassToCards('add', 'cardHover');
     this.twoCard = [];
   };
 
@@ -133,7 +132,7 @@ class Game {
     if (this.twoCard.length < 2) {
       this.twoCard.push(card);
       card.setVisible(true);
-      card.cardObj.classList.remove("cardHover");
+      card.cardObj.classList.remove('cardHover');
       tapSound.play();
 
       card.cardObj.onclick = null; // disable onclick event until check eqaualiti twoCards
@@ -148,21 +147,16 @@ class Game {
         showModal();
         showModalChildren();
         tadaSound.play();
+        parent.setScore(this.getScore().toFixed(2));
       }
 
-      if (
-        this.twoCard.length === 2 &&
-        !Card.isEqual(this.twoCard[0], this.twoCard[1])
-      ) {
-        this.manageStyleClassToCards("add", "unmatched");
+      if (this.twoCard.length === 2 && !Card.isEqual(this.twoCard[0], this.twoCard[1])) {
+        this.manageStyleClassToCards('add', 'unmatched');
         this.mySetTimeout = setTimeout(() => {
           timeoutCallback();
         }, 2000);
-      } else if (
-        this.twoCard.length === 2 &&
-        Card.isEqual(this.twoCard[0], this.twoCard[1])
-      ) {
-        this.manageStyleClassToCards("add", "matched");
+      } else if (this.twoCard.length === 2 && Card.isEqual(this.twoCard[0], this.twoCard[1])) {
+        this.manageStyleClassToCards('add', 'matched');
         successSound.currentTime = 0;
         successSound.play();
         this.twoCard = [];

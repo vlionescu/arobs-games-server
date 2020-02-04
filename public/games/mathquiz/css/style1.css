@@ -17,7 +17,6 @@ section {
 h1{
     font-size: 40px;
     text-transform: uppercase;
-    margin-top: 20px;
 }
 
 h3{
@@ -43,7 +42,6 @@ p{
     background-image:  url(../img/bkmath.jpg);
     background-size: cover;
     flex-direction: column;
-    margin-top: 20px;
     font-size: 30px;
     border-style: double;
     border-radius: 30px;
