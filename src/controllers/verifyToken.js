@@ -3,7 +3,6 @@ const db = require('../database');
 
 module.exports = (req, res, next) => {
   try {
-    console.log(req.headers);
     // check header or url parameters or post parameters for token
     const token = req.headers['x-access-token'];
     if (!token) {
