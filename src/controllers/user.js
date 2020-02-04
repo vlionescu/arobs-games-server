@@ -27,6 +27,14 @@ exports.getById = async (req, res) => {
   }
 };
 
+// GET User ID from Token
+exports.getUserId = async (req, res) => {
+  if (req.userId) {
+    return res.status(200).json({ id: req.userId });
+  }
+  return res.status(404).json({ error: 'No token provided or no user found.' });
+};
+
 // POST Add user
 exports.post = async (req, res, next) => {
   try {

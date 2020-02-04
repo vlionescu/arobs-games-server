@@ -11,6 +11,7 @@ module.exports = (app) => {
   app.get('/users/:id', userController.getById);
   app.get('/scores/:id', scoreController.getById);
   app.get('/logout', authController.logout);
+  app.get('/userid', verifyToken, userController.getUserId);
 
   // if registration is successful, then redirect to authentication
   app.post('/users', userController.post, authController.login);
