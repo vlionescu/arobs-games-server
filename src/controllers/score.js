@@ -26,17 +26,8 @@ exports.getById = async (req, res) => {
 // POST Add score.
 exports.post = async (req, res) => {
   try {
-    const { name, gameId, points } = req.body;
-
-    if (!name || !gameId || !points) return res.status(400).send('Bad request/AddScore');
-
-    const userId = db.get(
-      `SELECT scores.userId FROM scores JOIN users ON scores.userId = users.id WHERE users.name = $name`,
-      {
-        $name: name,
-      },
-    );
-
+    const { userId, gameId, points } = req.body;
+    if (!userId || !gameId || points == null) return res.status(400).send('Bad request/AddScore');
     const id = await db.run(
       `INSERT INTO scores(userId, gameId, points) VALUES ($userId, $gameId, $points)`,
       {
