@@ -1,11 +1,11 @@
 begin transaction;
-INSERT INTO games(name, imageUrl) 
+INSERT INTO games(name, imageUrl, description) 
 VALUES 
-('snake','images/snake.png'),
-('picturematch','images/picturematch.png'),
-('tictactoe','images/tictactoe.png'),
-('hangman','images/hangman.png'),
-('battleship','images/battleship.png'),
-('mathquiz', 'images/mathquiz.png'),
-('connectfour', 'images/connectfour.png');
+('snake','images/snake.png',"test description lorem ipsum dolor sit amet n"),
+('picturematch','images/picturematch.png',"test description lorem ipsum dolor sit amet n"),
+('tictactoe','images/tictactoe.png',"test description lorem ipsum dolor sit amet n"),
+('hangman','images/hangman.png',"test description lorem ipsum dolor sit amet n"),
+('battleship','images/battleship.png',"test description lorem ipsum dolor sit amet n"),
+('mathquiz', 'images/mathquiz.png', "Two plus two is four minus one that's three quick maths"),
+('connectfour', 'images/connectfour.png',"test description lorem ipsum dolor sit amet n");
 commit;
