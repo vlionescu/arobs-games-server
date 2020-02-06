@@ -131,12 +131,26 @@ const draw = () => {
   }
 
   // snake eats -> refresh food position
-  if (snakeX == food.x && snakeY == food.y) {
+  if (snakeX === food.x && snakeY === food.y) {
+    let i = 0;
     score++;
     eat.play();
 
-    let posX = Math.floor(Math.random() * 17 + 1) * unit;
-    let posY = Math.floor(Math.random() * 15 + 3) * unit;
+    let isFoodInSnake = true;
+    let posX;
+    let posY;
+    while (isFoodInSnake) {
+      isFoodInSnake = false;
+      posX = Math.floor(Math.random() * 17 + 1) * unit;
+      posY = Math.floor(Math.random() * 15 + 3) * unit;
+
+      for (let i of snake) {
+        if (posX === i.x && posY === i.y) {
+          isFoodInSnake = true;
+          break;
+        }
+      }
+    }
 
     food = {
       x: posX,
@@ -167,7 +181,6 @@ const draw = () => {
     drc = '';
     checkDead();
     parent.setScore(score);
-    console.log();
   }
 
   snake.unshift(newHead);

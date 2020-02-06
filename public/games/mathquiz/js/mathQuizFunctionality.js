@@ -150,7 +150,6 @@ function verifyAnswer(i) {
       alert('In the end YOU ROCK! \n You make: ' + score + ' points');
       btnRestart.style.visibility = 'visible';
     }
-    console.log(level);
     showLevelMessage(level);
     Start();
   } else {
