@@ -57,6 +57,7 @@ document.addEventListener('keydown', direction);
 let drc;
 
 function direction(event) {
+  event.preventDefault();
   if (event.keyCode === 37 && drc != 'RIGHT') {
     left.play();
     drc = 'LEFT';
