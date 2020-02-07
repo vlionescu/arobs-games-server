@@ -62,7 +62,7 @@ const exercices = [
   },
   {
     exercice: '3 - 3 - 3 + 4 = X',
-    answer: '-1.5',
+    answer: '1',
   },
   {
     exercice: '9 - 3 : 1/3 + 1 = X',
