@@ -32,11 +32,11 @@ const exercices = [
     answer: '1',
   },
   {
-    exercice: '60 + 60 x 1 + 1 = ?',
+    exercice: '60 + 60 * 1 + 1 = X',
     answer: '121',
   },
   {
-    exercice: '44 : 22 : 2 : 2 = ?',
+    exercice: '44 : 22 : 2 : 2 = X',
     answer: '0.5',
   },
   {
@@ -49,19 +49,19 @@ const exercices = [
   },
   //3
   {
-    exercice: '3 + 3 x 3 - 3 + 3 = X',
+    exercice: '3 + 3 * 3 - 3 + 3 = X',
     answer: '12',
   },
   {
-    exercice: '6 - 1 x 0 + 2 : 2 = X',
+    exercice: '6 - 1 * 0 + 2 : 2 = X',
     answer: '7',
   },
   {
-    exercice: '30 : 1/2 + 10',
+    exercice: '30 : 1/2 + 10 = X',
     answer: '70',
   },
   {
-    exercice: '3 - 3 - 3 + 4 =',
+    exercice: '3 - 3 - 3 + 4 = X',
     answer: '-1.5',
   },
   {
@@ -70,7 +70,7 @@ const exercices = [
   },
   //4
   {
-    exercice: '6 : 2( 1 + 2) = ?',
+    exercice: '6 : 2( 1 + 2) = X',
     answer: '9',
   },
   {
@@ -82,11 +82,11 @@ const exercices = [
     answer: '-1/4',
   },
   {
-    exercice: '2 - 2 x 2 + 2 = ?',
+    exercice: '2 - 2 * 2 + 2 = X',
     answer: '0',
   },
   {
-    exercice: '7 + 7 : 7 + 7 x 7 - 7',
+    exercice: '7 + 7 : 7 + 7 * 7 - 7',
     answer: '50',
   },
 ];
